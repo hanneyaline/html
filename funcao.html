@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-midth, initial-scale=1.0">
+    <title>Exceções</title> 
+</head>
+<body>
+
+    <script>
+        function verifica() {
+            try {
+                var x = document.getELementById("valor").value;
+
+                // verifica se o campo esta vazio
+                if(x==="") throw "campo vazio";
+
+                // tenta converter para numero
+                x = Number(x);
+                if (isNAN(X)) throw "Não é um número válido";
+
+                //verifica se está fora do intervalo
+                if (x > 10) throw "Alto demais";
+                if (x < 5) throw "Baixo demais";
+
+                //se tudo estiver certo
+                documento.getELementById("mesg"). innerHTML = "número aceito!";
+            } catch (erro) {
+                //se ocorreu um erro
+                var y = document.getElementById("mesg");
+                y,innerHTML = "Erro:" + erro + ".";
+            }
+        }
+    </script>
+
+    <h1>exceões</h1>
+    <p>Digite um número entre 5 e 10:</p>
+    <input id="valor" type="text">
+    <button type="button" onclik="verifica()">Testar</button>
+    <p id="mesg"></p>
+
+</body>
+</html>
